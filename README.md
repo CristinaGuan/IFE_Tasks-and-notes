@@ -5,5 +5,7 @@
 
 第五天&第六天：实现三种简历排版，预览地址：
 简历1：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%BA%94%E5%A4%A9%E5%92%8C%E7%AC%AC%E5%85%AD%E5%A4%A9_%E4%B8%89%E7%A7%8D%E7%AE%80%E5%8E%86/guan_resume.html
+
 简历2：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%BA%94%E5%A4%A9%E5%92%8C%E7%AC%AC%E5%85%AD%E5%A4%A9_%E4%B8%89%E7%A7%8D%E7%AE%80%E5%8E%86/guan_resume2.html
+
 简历3：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%BA%94%E5%A4%A9%E5%92%8C%E7%AC%AC%E5%85%AD%E5%A4%A9_%E4%B8%89%E7%A7%8D%E7%AE%80%E5%8E%86/guan_resume3.html
