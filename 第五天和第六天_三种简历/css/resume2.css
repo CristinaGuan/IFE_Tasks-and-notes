@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+	padding:0;
+	font: 18px "Microsoft Yahei",Arial;
+	background-color: blue;
+}
+.resume{
+	width: 100%;
+	position: relative;
+}
+.left-side{
+	width: 25%;
+	background-color: blue;
+	height: 100%;
+	float: left;
+	padding-top: 20px;
+	position: relative;
+	top: 0;
+	bottom: 0;
+
+}
+.container{
+	width: 75%;
+    margin-left: 25%;
+    padding-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid transparent;
+    margin-bottom: 0;
+}
+
+
+.left-side h1{
+	text-align: center;
+	color: #fff;
+	letter-spacing: 10px;
+	font-size: 50px;
+}
+/* @media screen and (min-width:600px){
+.left-side{
+	width: 25%;
+	background-color: blue;
+	height: auto;
+	float: left;
+}
+.container{
+	width: 75%;
+    margin-left: 25%;
+}
+} */
+@media screen and (max-width: 678px){
+  .left-side,.container{
+	width: 100%;
+	float: left;
+  }
+  .container{
+  	margin: 0 auto;
+  }
+
+}
+.message .basic-msg,.contact .about-contact{
+	display: inline-block;
+	margin-right: 2em;
+}
+.message .basic-msg p,.contact .about-contact p{
+	display: inline-block;
+}
+.message .basic-msg span,.contact .about-contact span{
+	font-weight: 600;
+	font-size: 1.1em;
+}
+.capability  .capability-desc span{
+}
+.capability  .capability-desc p,.educational .educational-exp p,.project .project-exp p{
+  margin-top: 0;
+  font-size: 0.8em;
+}
+

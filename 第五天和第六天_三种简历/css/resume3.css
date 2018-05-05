@@ -1,0 +1,91 @@
+body{
+	margin: 0;
+	padding:0;
+	font: 18px "Microsoft Yahei",Arial;
+
+}
+p{
+	font-size: 0.8em;
+}
+span{
+	font-weight: 600;
+}
+.container{
+	width: 100%;
+}
+
+.resume{
+	padding-top: 0;
+
+}
+.title-top-nav{
+	height: 150px;
+	line-height: 150px;
+	background-color: blue;
+}
+.title-top-nav h1{
+	display: inline-block;
+	margin-top: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 10px;
+    text-shadow: 5px 5px 10px #aaa;
+    font-size: 50px;
+}
+section{
+	display: inline-block;
+	width: 100%;
+	float: left;
+	margin-top: 2px;
+    margin-bottom: 0;
+    padding: 0;
+}
+section h2{
+	display: inline-block;
+	float: left;
+    width: 15%;
+    height: 200px;
+    line-height: 200px;
+    background-color: #ddd;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+.section-right{
+	width: 84%;
+	height: 200px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	
+}
+section div{
+	display: inline-block;
+}
+.basic-msg,.about-contact,.capability-desc,.educational-exp,.project-exp{
+	margin-right: 20px;
+}
+.basic-msg span,.basic-msg p,.about-contact span, .about-contact p,.capability-desc span ,.capability-desc p,.educational-exp span ,.educational-exp p,.project-exp span,.project-exp p{
+	display: inline-block;
+}
+.capability-desc,.educational-exp,.project-exp{
+	width: 100%;
+}
+
+@media screen and (max-width: 678px){
+  section h2{	
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+
+}
+.section-right{
+	width: 100%;
+	height: auto;
+	
+}
+
+}
+
+
