@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="name" content="content" charset="UTF-8">
+  <title>第三天，做一个简单的简历</title>
+  <style type="text/css" media="screen">
+    body{
+ font: 18px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+p {
+   margin-top:0;
+   margin-bottom:0;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: red;
+}
+a:focus {
+  border-bottom: 1px solid;
+  background: #BAE498;
+}
+
+a:hover {
+  border-bottom: 1px solid;     
+  background: #CDFEAA;
+}
+
+a:active {
+  background: #265301;
+  color: #CDFEAA;
+}
+a[href*="http"]{
+  background: url('https://mdn.mozillademos.org/files/12982/external-link-52.png') no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
+ul{
+  margin-top:0;
+  padding-left:0;
+}
+li{
+/*   list-style-type:none; */
+}
+
+.resume{
+  width:100%;
+  margin：0;
+  padding:0;
+  border-radius:20px 20px;
+/*   border-style:dotted; */
+/*   border-top:2px solid #aaa;
+  border-left:2px dotted #aaa;
+  border-right:2px dashed #aaa;
+  border-bottom:2px solid #aaa; */
+  border:20px solid #000;
+  border-clip:padding-box;
+  border-image-source:url('https://mdn.mozillademos.org/files/13060/border-image.png');
+  border-image-slice:40;
+  border-image-repeat: round;
+  background-image:url('https://ws2.sinaimg.cn/large/006tNc79ly1fqy98mihvuj30nk0vr0ta.jpg');
+  background-repeat:no-repeat;
+  background-position:top;
+  background-size:100% auto;  /*指定图片的宽度100%,高为auto*/
+}
+span{
+  font-weight:600;
+}
+.top,.resume_intro,.footer{
+   width:100%;
+}
+.top{
+  height:200px;
+  text-align:center;
+  margin-top:0;
+  border-radius:20px 20px 0 0;
+}
+.top h1{
+  margin:0 auto;
+  font-size:50px;
+  line-height:200px;
+  text-shadow: 5px 5px 5px #aaa;
+}
+.resume_intro_m,.education,.work_project,.aboutme{
+  width:80%;
+  margin:10px auto;
+}
+.resume_intro h3,.resume_project h3,.resume_education h3,.resume_aboutme h3{
+  display:block;
+  border-bottom:3px solid green;
+  border-radius:3px;
+  margin:20px 100px;
+}
+.name,.age,.tel,.email,.degree,.school,.address{
+  height:40px;
+  line-height:40px;
+  margin-bottom:5px;
+}
+.name,.tel,.degree{
+width:300px;
+  float:left;
+}
+.name p,.age p,.tel p,.email p,.degree p,.school p,.address p{
+  display:block;
+  width:90px;
+  height:100%;
+  float:left;
+}
+.pic{
+  width:120px;
+  height:120px;
+  position:absolute;
+  top:310px;
+  right:280px;
+}
+.pic img{
+  width:100%;
+  height:100%;
+}
+
+.education ul li{
+  line-height:40px;
+  list-style-type:none;
+}
+.education ul li p{
+  display:block;
+  float:left;
+  margin-right:20px;
+}
+.work_project ul li .time{
+  width:20%;
+  float:left;
+}
+.work_project ul li .work{
+  width:80%;
+  margin-left:20%;
+}
+.aboutme p{
+  text-indent:50px;
+}
+.footer{
+  height:50px;
+   border-radius:0px 0px 20px 20px;
+}
+.footer p{
+  font-size:14px;
+  display:inner-block;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+}
+  </style>
+</head>
+<body>
+<div class="resume">
+  <div class="top">
+    <h1>个人简历</h1>
+  </div>
+  <div class="resume_intro">
+    <h3>基本信息</h3>
+    <div class="resume_intro_m">
+
+      <div class="name">
+        <p>姓&nbsp;&nbsp;&nbsp;名:</p><span>官晓燕</span></div>
+      <div class="age">
+        <p>年&nbsp;&nbsp;&nbsp;龄:</p><span>26岁</span></div>
+      <div class="tel">
+        <p>手&nbsp;&nbsp;&nbsp;机:</p><span>15688958997</span></div>
+      <div class="email">
+        <p>邮&nbsp;&nbsp;&nbsp;箱:</p><span><a href="https://codepen.io/cristina_guan/pen/KRqXRP">15688958997@qq.com</a></span></div>
+      <div class="degree">
+        <p>学&nbsp;&nbsp;&nbsp;历:</p><span>本科</span></div>
+      <div class="school">
+        <p>毕业院校:</p><span>深圳技术大学</span></div>
+      <div class="address">
+        <p>家庭地址:</p><span>北京市通州区九棵树万达广场A座100001</span></div>
+      <div class="pic"><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqxfgv7hemj30b40b4gls.jpg" /></div>
+    </div>
+  </div>
+  <div class="resume_education">
+    <h3>教育经历</h3>
+    <div class="education">
+      <ul>
+        <li>
+          <p>2004~2007</p><span>四川省南充市XXXX镇XXXXXX中学</span></li>
+        <li>
+          <p>2007~2010</p><span>四川省南充市XXXX镇XXXXXX中学</span></li>
+        <li>
+          <p>2010~2014</p><span>深圳市南山区XXXX镇XXXXXX大学</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="resume_project">
+    <h3>工作经历</h3>
+    <div class="work_project">
+      <ul>
+        <li>
+          <div class="time">
+            <h4>2013.06-2014.05</h4>
+          </div>
+          <div class="work">
+            <h4>启航之星有限公司(PHP开发工程师)</h4>
+            <ol>
+              <li>主要是使用HTML标记、div+css+javascript Dom操作等前端WEB技术进行网站的开发与制造</li>
+              <li>使用mvc思想、oop面向对象思想、ThinkPHP模板框架、基于jQuery的EasyUI框架、Smarty模板引擎等技术来做项目开发</li>
+            </ol>
+          </div>
+        </li>
+        <li>
+          <div class="time">
+            <h4>2013.09-2014.01</h4>
+          </div>
+          <div class="work">
+            <h4>栋力无限(项目负责人)</h4>
+            <ol>
+              <li>负责开发小组的工作调度、人员职能安排与分配、网站的功能策划与需求分析</li>
+              <li>设计制作功能架构图、以及网站数十个页面的设计、前端与后端以及与系统管理员的交接、进度的跟进和时间安排、服务器监控等任务，网站目前运行状况良好</li>
+            </ol>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="resume_aboutme">
+    <h3>自我介绍</h3>
+    <div class="aboutme">
+      <p>我热爱运动，喜欢旅游，性格开朗乐观，热情友好，能吃苦耐劳，学习能力强。三年的校园学习生活经历使我积累了较强的组织、协调沟通能力和团队合作精神，具有较强的责任心。面对校外的实习机会我会努力认真的工作，积累更多的相关工作经验，能够在实习期间在处理问题时能够取得重大的提升，使自己更成熟。对事物有敏锐的洞察力，多次的社会实践经历及在学生会工作期间锻炼了我与人沟通合作的能力以及独立能力，做事认真负责。</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>简历内容纯属瞎写</p>
+  </div>
+</div>
+</body>
+</html>
