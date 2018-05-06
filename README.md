@@ -11,4 +11,7 @@
 
 简历3：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%BA%94%E5%A4%A9%E5%92%8C%E7%AC%AC%E5%85%AD%E5%A4%A9_%E4%B8%89%E7%A7%8D%E7%AE%80%E5%8E%86/guan_resume3.html
 
+第七天&第八天：学习布局
+练习：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%B8%83%E5%92%8C%E7%AC%AC%E5%85%AB%E5%A4%A9_%E5%AD%A6%E4%B9%A0%E5%B8%83%E5%B1%80/day07%2608.html
+
 
