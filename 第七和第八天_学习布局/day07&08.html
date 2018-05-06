@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+	<meta  charset="UTF-8">
+	<meta  http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>页面布局</title>
+	<style type="text/css" media="screen">
+		/* *{
+			--webkit-box-sizing: border-box;
+			--moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+		} */
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		section{
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+		}
+		.layout1_con,.layout2_con,.layout3_con,.layout4_con,.layout5_con,.layout1_f_con,.layout2_p_con,.layout2_f_con,.layout4_p_con,.layout4_f_con{
+			overflow: hidden;
+			width: 100%;
+			height: 200px;
+			position: relative;
+		}
+		.layout1_con .layout1_left{
+			width: 30%;
+			height: 100%;
+			float: left;
+			background-color: yellow;
+		}
+		.layout1_con .layout1_right{
+			width: 70%;
+			height: 100%;
+			background-color: green;
+			float:left;
+		}
+        .layout1_p_left{
+            width: 30%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: yellow;
+        }
+        .layout1_p_right{
+            width: 70%;
+			height: 100%;
+			background-color: green;
+			position: absolute;
+			left: 30%;
+			top: 0;
+			
+        }
+        .layout1_f_con{
+        	display: flex;
+        	flex-direction: row;
+        }
+        .layout1_f_con .flex-item:first-child{
+           background-color: yellow;
+           flex-basis: 30%;
+        }
+        .layout1_f_con .flex-item:last-child{
+           background-color: green;
+           flex-basis: 70%;
+        }
+		.layout2_left{
+			width: 400px;
+			height: 100%;
+			float: left;
+			background-color: red;
+		}
+		.layout2_right{
+			 width: cacl(100% - 400px);
+			 width: -webkit-calc(100% - 400px);
+			 width: -moz-calc(100% - 400px);
+			height: 100%;
+			float: left;
+			background-color: blue;
+		}
+
+		.layout2_p_con .layout2_p:first-child{
+          width: 400px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: red;
+
+		}
+		.layout2_p_con .layout2_p:last-child{
+            width: cacl(100% - 400px);
+			 width: -webkit-calc(100% - 400px);
+			 width: -moz-calc(100% - 400px);
+			height: 100%;
+			background-color: blue;
+			position: absolute;
+			top: 0;
+			left: 400px;
+		}
+		.layout2_f_con{
+			display: flex;
+			flex-direction: row;
+		}
+		.layout2_f_con .flex-item:first-child{
+			flex-basis: 400px;
+			background-color: red;
+			flex-shrink: 0; /*不被压缩，保持400px*/
+		}
+		.layout2_f_con .flex-item:last-child{
+			flex: 1;
+			background-color: blue;
+		}
+		.layout3_left{
+			width: cacl(100% - 400px);
+			 width: -webkit-calc(100% - 400px);
+			 width: -moz-calc(100% - 400px);
+			height: 100%;
+			float: left;
+			background-color: orange;
+		}
+		.layout3_right{
+			width: 400px;
+			height: 100%;
+			float: left;
+			background-color: pink;
+		}
+		.layout4_left{
+			width: 300px;
+			height: 100%;
+			float: left;
+			background-color: Indigo;
+		}
+		.layout4_middle{
+            width: cacl(100% - 600px);
+		    width: -webkit-calc(100% - 600px);
+			width: -moz-calc(100% - 600px);
+			height: 100%;
+			float: left;
+			background-color: GreenYellow;
+		}
+        .layout4_right{
+        	width: 300px;
+			height: 100%;
+			float: right;
+			background-color: MediumVioletRed;
+        }
+         .layout4_p_con .layout4_p:nth-child(1){
+            width: 300px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: Indigo;
+        }
+        .layout4_p_con .layout4_p:nth-child(2){
+            width: cacl(100% - 600px);
+		    width: -webkit-calc(100% - 600px);
+			width: -moz-calc(100% - 600px);
+			height: 100%;
+
+			position: absolute;
+			top: 0;
+			left: 300px;
+			background-color: GreenYellow;
+        }
+       
+        .layout4_p_con .layout4_p:nth-child(3){
+            width: 300px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: MediumVioletRed;
+        }
+        .layout4_f_con{
+        	display: flex;
+        	flex-direction: row;
+        }
+        .layout4_f_con .flex-item:nth-child(1){
+          flex-basis: 300px;
+          flex-shrink: 0;
+          background-color: Indigo;
+        }
+        .layout4_f_con .flex-item:nth-child(2){
+           background-color: GreenYellow;
+           flex: 1;
+        }
+         .layout4_f_con .flex-item:nth-child(3){
+         	flex-basis: 300px;
+         	flex-shrink: 0;
+          background-color: MediumVioletRed;
+        }
+        .layout5_left{
+            width: 300px;
+			height: 100%;
+			float: left;
+			background-color: PaleVioletRed;
+        }
+        .layout5_middle{
+            width: 300px;
+			height: 100%;
+			float:left;
+			background-color: SteelBlue;
+		}
+        .layout5_right{
+        	width: cacl(100% - 600px);
+		    width: -webkit-calc(100% - 600px);
+			width: -moz-calc(100% - 600px);
+			height: 100%;
+			float: left;
+			background-color:Salmon;
+        }
+	</style>
+</head>
+<body>
+<section>
+	<h2>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度,用float实现</h2>
+     <div class="layout1_con">
+     	<div class="layout1_left">30%</div>
+     	<div class="layout1_right">70%</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度，用position实现</h2>
+     <div class="layout1_con">
+     	<div class="layout1_p_left">30%</div>
+     	<div class="layout1_p_right">70%</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个两栏布局，左侧占30%宽度，右侧占70%宽度，用Flexbox实现</h2>
+     <div class="layout1_f_con">
+     	<div class="flex-item">30%</div>
+     	<div class="flex-item">70%</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化——Float实现的</h2>
+     <div class="layout2_con">
+     	<div class="layout2_left">400px</div>
+     	<div class="layout2_right">自适应</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化——position实现的</h2>
+     <div class="layout2_p_con">
+     	<div class="layout2_p">400px</div>
+     	<div class="layout2_p">自适应</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化——Flexbox实现的</h2>
+     <div class="layout2_f_con">
+     	<div class="flex-item">400px</div>
+     	<div class="flex-item">自适应</div>
+     </div>
+</section>
+
+<section>
+	<h2>实现一个两栏布局，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</h2>
+     <div class="layout3_con">
+     	<div class="layout3_left">自适应</div>
+     	<div class="layout3_right">固定400px</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化——float实现</h2>
+     <div class="layout4_con">
+     	<div class="layout4_left">固定300px</div>
+     	<div class="layout4_middle">自适应</div>
+     	<div class="layout4_right">固定300px</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化——position实现</h2>
+     <div class="layout4_p_con">
+     	<div class="layout4_p">固定300px</div>
+     	<div class="layout4_p">自适应</div>
+     	<div class="layout4_p">固定300px</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个三栏布局，左侧固定宽度，右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化———flexbox实现</h2>
+     <div class="layout4_f_con">
+     	<div class="flex-item">固定300px</div>
+     	<div class="flex-item">自适应</div>
+     	<div class="flex-item">固定300px</div>
+     </div>
+</section>
+<section>
+	<h2>实现一个三栏布局，左侧固定宽度，中间固定宽度，右侧根据浏览器宽度变化而自适应变化</h2>
+     <div class="layout5_con">
+     	<div class="layout5_left">固定300px</div>
+     	<div class="layout5_middle">固定300px</div>
+     	<div class="layout5_right">自适应</div>
+     </div>
+</section>
+</body>
+</html>
