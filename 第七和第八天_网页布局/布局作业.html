@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>布局应用</title>
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    header,
+    .banner,
+    nav,
+    .main,
+    .footer {
+        width: 100%;
+    }
+
+    .head-container,
+    .banner-container,
+    nav .nav-container,
+    .main-container {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    header {
+        line-height: 60px;
+        background-color: #333;
+        color: #fff;
+    }
+
+    .head-container:after,
+    ul:after {
+        content: "";
+        display: block;
+        visibility: hidden;
+        height: 0;
+        clear: both;
+    }
+
+    .head-container,
+    ul {
+        *zoom: 1;
+    }
+
+    .logo {
+        float: left;
+        font-size: 1.5em;
+    }
+
+    .head-nav-right {
+        float: right;
+    }
+
+    ul.head-nav-right {
+        height: 30px;
+    }
+
+    ul.head-nav-right li {
+        float: left;
+        margin: 0 5px;
+        line-height: 30px;
+    }
+
+    ul.head-nav-right li a {
+        color: #fff;
+    }
+
+    ul.head-nav-right li a:hover {
+        color: yellow;
+    }
+
+    .banner {
+        height: 296px;
+        background-color: #24C534;
+    }
+
+    .banner-container {
+        height: 100%;
+        position: relative;
+    }
+
+    .banner-container ul {
+        height: 60px;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+    }
+
+    .banner-container ul li {
+        text-align: center;
+        line-height: 35px;
+        float: left;
+        width: 28px;
+        height: 35px;
+        border: 1px solid blue;
+        display: inline-block;
+        margin: 25px 5px 0 5px;
+        border: 2px solid #002F00;
+        color: #000;
+        font-weight: bold;
+        background-color: #A1E399;
+    }
+
+    .banner-container ul li.active {
+        padding-top: 25px;
+        margin-top: 0;
+        background-color: #DAF4D6;
+    }
+
+    nav {
+        height: 70px;
+        border-bottom: 2px solid #CCCCCC;
+    }
+
+    .nav-container ul {
+        height: 70px;
+    }
+
+    nav ul li {
+        width: 108px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 18px;
+        border: 2px solid #CCCCCC;
+        float: left;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-right: -2px;
+        background-color: #EEEEEE;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #000;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    nav ul li.active {
+        border-bottom: 2px solid #fff;
+        background-color: #fff;
+
+    }
+
+    .main {
+        margin-top: 20px;
+    }
+
+    .con-top,
+    .con-mid,
+    .con-bot {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .con-top .content,
+    .con-mid .content,
+    .con-bot .content {
+        border: 1px solid #CCCCCC;
+        color: #000;
+        margin: 0 10px 10px 0;
+        text-align: center;
+        height: 175px;
+        flex: 1;
+    }
+
+    footer {
+        height: 120px;
+        background-color: #666;
+    }
+
+    .footer-container {
+        width: 100%;
+        line-height: 120px;
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .footer-container p a {
+        color: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="">
+        <div class="head-container">
+            <div class="logo">LOGO
+            </div>
+            <ul class="head-nav-right">
+                <li><a href="https://github.com/CristinaGuan/IFE_Tasks-and-notes">GitHub</a></li>
+                <li><a href="#">Regiest</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="banner-container">
+            <ul>
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li class="active"><a href="">HOME</a></li>
+                <li><a href="">PROFILE</a></li>
+                <li><a href="">ABOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="main-container">
+            <div class="con-top">
+                <div class="content">this is content1</div>
+                <div class="content">this is content2</div>
+                <div class="content">this is content3</div>
+            </div>
+            <div class="con-mid">
+                <div class="content">this is content4</div>
+                <div class="content">this is content5</div>
+                <div class="content">this is content6</div>
+                <div class="content">this is content7</div>
+            </div>
+            <div class="con-bot">
+                <div class="content">this is content8</div>
+                <div class="content">this is content9</div>
+                <div class="content">this is content10</div>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>Form >><a href="https://github.com/CristinaGuan/IFE_Tasks-and-notes">官晓燕 </a>2018.05.07</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style type="text/css" media="screen">
+    body {
+        margin: 0;
+        padding: 0;
+        min-width: 550px;
+    }
+
+    * html #left {
+        left: 150px;
+        /* 在IE6（浏览器窗口的整个宽度）中，负边距将左列拉得太左。 我们需要将它向右推回右列的整个宽度 - 使用star-html hack从其他浏览器中屏蔽它  */
+    }
+  
+    #container{
+        padding-left: 200px;
+        padding-right: 150px;
+        height: 300px;
+        overflow: auto;
+        background-color: #aaa;
+        margin-bottom: 5px;
+    }
+    
+    
+    #container .column{
+        float: left;
+        position: relative;
+        height: 300px;
+    }
+
+    #container #center {
+        width: 100%;
+        background-color:pink;
+    }
+
+    #container #left {
+        width: 200px;
+        margin-left: -100%;
+        right: 200px;
+        background-color: yellow;
+    }
+
+    #container #right {
+        width: 150px;
+        margin-right: -150px;
+        background-color: green;
+    }
+
+    #footer {
+    	height: 50px;
+        clear: both;background-color: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="container">
+        <div id="center" class="column">center width:100%</div>
+        <div id="left" class="column">left width: 200px;margin-left: -100%;</div>
+        <div id="right" class="column">right width: 150px;margin-right: -150px;</div>
+    </div>
+    <div id="footer">footer</div>
+</body>
+
+</html>
