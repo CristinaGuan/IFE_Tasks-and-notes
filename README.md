@@ -14,6 +14,6 @@
 第七天&第八天：学习布局
 练习：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%B8%83%E5%92%8C%E7%AC%AC%E5%85%AB%E5%A4%A9_%E5%AD%A6%E4%B9%A0%E5%B8%83%E5%B1%80/day07%2608.html
 
-作业效果预览：
+作业效果预览：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E7%AC%AC%E4%B8%83%E5%92%8C%E7%AC%AC%E5%85%AB%E5%A4%A9_%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/%E5%B8%83%E5%B1%80%E4%BD%9C%E4%B8%9A.html
 
 
