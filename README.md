@@ -18,6 +18,6 @@ Git Pages:  https://cristinaguan.github.io/IFE_Tasks-and-notes/
 作业效果预览：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八天_网页布局/布局作业.html
 
 第9~11天：完成一个漂亮的网页
-预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第9天到第11天漂亮网站/beautifulWeb.html
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/%E5%9F%BA%E7%A1%80%E5%AD%A6%E9%99%A2/%E7%AC%AC9%E5%A4%A9%E5%88%B0%E7%AC%AC11%E5%A4%A9%E6%BC%82%E4%BA%AE%E7%BD%91%E7%AB%99/beautifulWeb.html
 
 
