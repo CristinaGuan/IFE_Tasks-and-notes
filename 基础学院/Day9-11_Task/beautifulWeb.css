@@ -2,7 +2,7 @@
 * @Author: guanxy
 * @Date:   2018-05-12 20:56:50
 * @Last Modified by:   guanxy
-* @Last Modified time: 2018-05-15 14:57:06
+* @Last Modified time: 2018-05-15 21:25:23
 */
 
 body {
@@ -11,7 +11,7 @@ body {
     font-family: "Microsoft YaHei","Arial","黑体","宋体",sans-serif;
     z-index: 0;
     font-weight: normal;
-    min-width: 1600px;
+    min-width: 1200px;
 }
 
 ul {

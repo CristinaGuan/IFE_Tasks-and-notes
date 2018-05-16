@@ -1,0 +1,150 @@
+/*
+* @Author: guanxy
+* @Date:   2018-05-15 22:30:11
+* @Last Modified by:   guanxy
+* @Last Modified time: 2018-05-16 00:09:32
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "ProximaNova","Microsoft YaHei", "Arial", "黑体", "宋体", sans-serif;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+#container {
+    width: 1580px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+}
+
+#column1 {
+    width: 100px;
+    background: rgba(28, 36, 50, 1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+
+#column1 .item-list {
+    flex-direction: column;
+    width: 60px;
+}
+
+#column1 .item-list .item1,
+#column1 .item-list .item2,
+#column1 .item-list .item3,
+#column1 .item-list .item4 {
+    width: 60px;
+    height: 60px;
+    margin: 20px auto;
+}
+
+#column1 .item-list .item1 {
+    background: url('img/Item-1.png') no-repeat;
+}
+
+#column1 .item-list .item2 {
+    background: url('img/Item-2.png') no-repeat;
+}
+
+#column1 .item-list .item3 {
+    background: url('img/Item-3.png') no-repeat;
+}
+
+#column1 .item-list .item4 {
+    background: url('img/Add-App.png') no-repeat;
+}
+
+#column1 .setting {
+    width: 60px;
+    height: 56px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+#column1 .setting .grid-icon,
+#column1 .setting .setting-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 20px 5px;
+}
+
+#column1 .setting .grid-icon {
+	background: url('img/Grid.png') no-repeat;
+}
+
+#column1 .setting .setting-icon {
+    background: url('img/Settings.png') no-repeat;
+}
+
+
+#column2{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	background-color: rgba(33,43, 61, 1.0);
+	width: 250px;
+
+}
+#column2 .part1{
+	margin-left:30px;
+	margin-right: 30px;
+	margin-top: 18px;
+	box-sizing: border-box; 
+	border-bottom: 1px solid rgba(37, 48, 67, 1.0);
+}
+#column2 .part1 .part1-main{
+	  height: 36px;
+	  line-height: 36px;
+	  margin-bottom: 18px;
+     
+}
+#column2 .part1 .part1-main h4{
+	margin-top: 0;
+  font-size: 12px;
+  font-family: "ProximaNova";
+  color: rgb(91, 103, 121);
+  text-transform: uppercase;
+  text-align: left;
+  display: inline-block;
+
+}
+#column2 .part1 .part1-main i{
+	 display: inline-block;
+	 float: right;
+	background: url('img/Settings.png');
+	width: 16px;
+	height: 16px;
+	 margin: 10px 0;
+
+}
+#column2 .part1 .item li{
+  
+  font-size: 14px;
+  font-family: "ProximaNova";
+  color: rgb(183, 192, 205);
+  line-height: 1;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+#column3{
+	background: rgba(255, 255, 255, 1.0);
+	border: 1px solid red;
+	width: 100%;
+	box-sizing: border-box;
+}
