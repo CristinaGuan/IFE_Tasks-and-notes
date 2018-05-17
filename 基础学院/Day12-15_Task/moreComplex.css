@@ -2,7 +2,7 @@
 * @Author: guanxy
 * @Date:   2018-05-15 22:30:11
 * @Last Modified by:   guanxy
-* @Last Modified time: 2018-05-17 19:23:47
+* @Last Modified time: 2018-05-18 00:04:01
 */
 
 body {
@@ -11,7 +11,7 @@ body {
     display: flex;
     flex: 1;
     font-family: "ProximaNova";
-    min-width: 1200px;
+    min-width: 1400px;
     /* border: 2px solid red; */
 }
 
@@ -23,6 +23,7 @@ ul {
 ul li {
     list-style-type: none;
 }
+
 .clearfix:after {
     content: '';
     visibility: hidden;
@@ -42,6 +43,7 @@ ul li {
     flex: 1;
     min-height: 100vh;
     flex-direction: row;
+    /* border: 1px solid red; */
 }
 
 #column1 {
@@ -152,13 +154,28 @@ ul li {
     margin: 10px 0;
 }
 
-#column2 .part1 .item li {
+#column2 .part1 .item li ,#column2 .part1 .item2 li {
 
     font-size: 14px;
     color: rgb(183, 192, 205);
     line-height: 1;
     text-align: left;
     margin-bottom: 24px;
+}
+#column2 .part1 .item2 li {
+    padding-left: 30px;
+}
+#column2 .part1 .item2 li:nth-child(1){
+    background: url('img/Book.png') no-repeat left;
+}
+#column2 .part1 .item2 li:nth-child(2){
+    background: url('img/Video-Camera.png') no-repeat left;
+}
+#column2 .part1 .item2 li:nth-child(3){
+    background: url('img/Video-Camera.png') no-repeat left;
+}
+#column2 .part1 .item2 li:nth-child(4){
+    background: url('img/Chart.png') no-repeat left;
 }
 
 #column3 {
@@ -236,191 +253,317 @@ ul li {
 
 #column3 .main-div {
     flex: 1;
-    border: 1px solid green;
     height: 100%;
     position: relative;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
 }
-#column3 .main-div .main-side{
-  width: 400px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+
+#column3 .main-div .main-side {
+    width: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+#column3 .main-div .main-side .search {
+    width: 100%;
+    height: 70px;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border: 2px solid rgb(229, 232, 238);
+}
+
+#column3 .main-div .main-side .search input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(229, 232, 238);
+    border-radius: 4px;
+    padding: 15px 40px 15px 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#column3 .main-div .main-side .search .search-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('img/Search-icon.png') no-repeat;
+    position: relative;
+    top: -27px;
+    left: 309px;
+}
+
+#column3 .main-div .main-container {
+    flex: 1;
+    /* overflow-y: auto; */
+}
+
+#column3 .main-div .main-side .side-list {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(229, 232, 238);
+    margin-top: -2px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: cacl(100% - 68px);
+    height: -webkit-calc(100% - 68px);
+    height: -moz-calc(100% - 68px);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#column3 .main-div .main-side .side-list .chat1 {
+    padding: 15px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 130px;
+    border-bottom: 2px solid rgb(229, 232, 238);
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-Avatar {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-Avatar img {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-Avatar .Avatar-info {
+    display: block;
+    float: left;
+
+    height: 50px;
+    position: absolute;
+    left: 70px;
+    right: 45px;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-Avatar .Avatar-info span {
+    font-size: 16px;
+    color: rgb(35, 153, 241);
+    line-height: 2;
+    background: url('img/Status.png') no-repeat left;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-Avatar .Avatar-info p {
+    font-size: 14px;
+    color: rgb(181, 181, 181);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-Avatar i {
+    display: block;
+    font-size: 12px;
+    width: 30px;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    color: rgb(127, 143, 164);
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-text {
+
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-text p {
+    font-size: 14px;
+    font-family: "Myriad Pro";
+    color: rgb(88, 93, 104);
+    line-height: 1.3;
+    margin-top: 0;
+    display: block;
+    flex: 1;
+}
+
+#column3 .main-div .main-side .side-list .chat1 .chat-text i {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('img/Notification.png') no-repeat;
+    margin-top: 5px;
+}
+
+.main-container {
+    position: absolute;
+    left: 400px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+}
+
+.container-head {
+    height: 70px;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border: 2px solid rgb(229, 232, 238);
+    border-left: none;
+}
+
+.container-head h4 {
+    display: inline-block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    font-family: "ProximaNova";
+    color: rgb(88, 93, 104);
+    margin-top: 0;
+    padding-right: 18px;
+    background: url('img/Status-green.png') no-repeat right;
+}
+
+.tool {
+    float: right;
+    height: 100%;
+    width: 300px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.tool .tool-icon-li1 {
+    float: left;
+    width: 110px;
+    height: 30px;
+    padding-right: 25px;
+    border-right: 1px solid rgb(206, 208, 218);
+}
+
+.tool-icon-box {
+    border: 2px solid rgb(206, 208, 218);
+    border-radius: 5px;
+    background: rgba(249, 250, 252, 1.0);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.tool-icon-box li {
+    flex: 1;
+}
+
+.tool-icon-box li:nth-child(1),
+.tool-icon-box li:nth-child(2),
+.tool-icon-box2 li:nth-child(1) {
+    border-right: 2px solid rgb(206, 208, 218);
+}
+
+.tool-icon-box li img {
+    display: block;
+    margin: 5px auto;
+}
+
+.tool .tool-icon-li2 {
+    display: block;
+    float: left;
+    height: 30px;
+    padding-left: 25px;
+    position: absolute;
+    right: 0;
+    left: 135px;
+}
+
+.tool .tool-icon-li2 p {
+    display: inline-block;
+    font-size: 14px;
+    color: rgb(86, 104, 138);
+    text-align: left;
+    margin-top: 0;
+    line-height: 30px;
+}
+
+.tool-icon-box2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 30px;
+    border: 2px solid rgb(206, 208, 218);
+    border-radius: 5px;
+    background: rgba(249, 250, 252, 1.0);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.tool-icon-box2 li {
+    flex: 1;
+}
+
+.tool-icon-box2 li img {
+    display: block;
+    margin: 9px auto;
+}
+
+.main-container .container-main{
+   display: flex;
+   flex-direction: column;
+}
+.Tuesday{
+  padding: 25px 30px;
   box-sizing: border-box;
-
+  background: url('img/Tuesday-divider.png') repeat-x bottom;
 }
-#column3 .main-div .main-side .search{
-  width: 100%;
-  height: 70px;
-  padding: 15px 30px;
-  box-sizing: border-box;
-   border: 2px solid rgb(229, 232, 238);
-
+.Tuesday .message1{
+    display: flex;
+    flex-direction: row;
+      margin-bottom: 10px;
 }
-#column3 .main-div .main-side .search input{
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgb(229, 232, 238);
-  border-radius: 4px;
-  padding: 15px 40px 15px 15px;
-  box-sizing: border-box;
-  position: relative;
-}
-#column3 .main-div .main-side .search .search-icon{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url('img/Search-icon.png') no-repeat;
-  position: relative;
-  top: -27px;
-  left: 309px;
-
-}
-#column3 .main-div .main-container{
- flex: 1;
-}
-#column3 .main-div .main-side .side-list{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid rgb(229, 232, 238);
-  margin-top: -2px;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  height: cacl(100% - 68px);
-  height: -webkit-calc(100% - 68px);
-  height: -moz-calc(100% - 68px);
-  box-sizing: border-box;
-  overflow-y: auto;
-  
-}
-#column3 .main-div .main-side .side-list .chat1{
- padding: 15px 20px;
- box-sizing: border-box;
- width: 100%;
- height: 130px;
- border-bottom: 2px solid rgb(229, 232, 238);
-
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-Avatar{
-  display: inline-block;
-  height: 50px;
-  width: 100%;
-  margin-bottom: 10px;
-  position: relative;
-
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-Avatar img{
-  display:block;
-  float: left;
+.Tuesday .message1 img{
   width: 50px;
   height: 50px;
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-Avatar .Avatar-info{
   display: block;
-  float: left;
+  margin-right: 20px;
 
-  height: 50px;
-  position: absolute;
-  left: 70px;
-  right: 45px;
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-Avatar .Avatar-info span{
-  font-size: 16px;
-  color: rgb(35, 153, 241);
-  line-height: 2;
-  background: url('img/Status.png') no-repeat left;
-  padding-left: 12px;
-  box-sizing: border-box;
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-Avatar .Avatar-info p{
-  font-size: 14px;
-  color: rgb(181, 181, 181);
-  line-height: 1.2;
-  margin-top: 0;
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-Avatar i{
-  display: block;
-  font-size: 12px;
-  width: 30px;
-  line-height: 50px;
-  position: absolute;
-  right: 0;
-  color: rgb(127, 143, 164);
 
 }
-#column3 .main-div .main-side .side-list .chat1 .chat-text{
-
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-text p{
-   font-size: 14px;
-   font-family: "Myriad Pro";
-   color: rgb(88, 93, 104);
-   line-height: 1.3;
-   margin-top: 0;
-   display: block;
-   flex: 1;
-}
-#column3 .main-div .main-side .side-list .chat1 .chat-text i{
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: url('img/Notification.png') no-repeat;
-  margin-top: 5px;
-
-}
-.main-container{
-  position: absolute;
-  left: 400px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  box-sizing: border-box;
+.Tuesday .message1 .message-info{
   flex: 1;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-
 }
-.container-head{
-  height: 70px;
-  padding: 15px 30px;
-  box-sizing: border-box;
-   border: 2px solid rgb(229, 232, 238);
-   border-left: none;
-   
+.Tuesday .message1 .message-info .mes-info-1{
+  width: 100%;
+  height: 30px;
 }
-.container-head h4{
-  display: inline-block;
-  font-size: 18px;
-  height: 40px;
-  line-height: 40px;
+.Tuesday .message1 .message-info .mes-info-1 h4{
+  font-size: 16px;
   font-family: "ProximaNova";
   color: rgb(88, 93, 104);
+  line-height: 30px;
   margin-top: 0;
-  padding-right: 18px;
-  background: url('img/Status-green.png') no-repeat right;
+  display: inline-block;
 }
-.tool{
-  float: right;
-  border: 1px solid red;
-  height: 100%;
-  width: 280px;
-  padding: 1px 1px;
-  box-sizing: border-box;
+.Tuesday .message1 .message-info .mes-info-1 span{
+  font-size: 14px;
+  color: rgb(127, 143, 164);
+  line-height: 30px;
 }
-
-.tool .tool-icon-li{
-  float: left;
-  width: 110px;
-  height: 30px;
-  border: 1px solid red;
-
+.Tuesday .message1 .message-info p{
+  font-size: 14px;
+  font-family: "Myriad Pro";
+  color: rgb(88, 93, 104);
+  line-height: 1.3;
 }
