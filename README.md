@@ -6,7 +6,9 @@ Git Pages:  https://cristinaguan.github.io/IFE_Tasks-and-notes/
 
 *第五天&第六天：实现三种简历排版，预览地址：
 简历1：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第五天和第六天_三种简历/guan_resume.html
+
 简历2：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第五天和第六天_三种简历/guan_resume2.html
+
 简历3：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第五天和第六天_三种简历/guan_resume3.html
 
 *第七天&第八天：学习布局
