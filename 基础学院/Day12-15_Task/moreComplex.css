@@ -2,17 +2,14 @@
 * @Author: guanxy
 * @Date:   2018-05-15 22:30:11
 * @Last Modified by:   guanxy
-* @Last Modified time: 2018-05-18 00:04:01
+* @Last Modified time: 2018-05-18 14:24:52
 */
 
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex: 1;
     font-family: "ProximaNova";
     min-width: 1400px;
-    /* border: 2px solid red; */
 }
 
 ul {
@@ -38,12 +35,10 @@ ul li {
 }
 
 #container {
-    width: 1580px;
     display: flex;
     flex: 1;
     min-height: 100vh;
     flex-direction: row;
-    /* border: 1px solid red; */
 }
 
 #column1 {
@@ -161,6 +156,26 @@ ul li {
     line-height: 1;
     text-align: left;
     margin-bottom: 24px;
+}
+#column2 .part1 .item .active{
+    position: relative;
+}
+#column2 .part1 .item  .active i.active-left{
+  position: absolute;
+  left: -30px;
+  top: -4px;
+  width: 20px;
+  height: 20px;
+   background: url('img/Active-Highlight.png') no-repeat -10px;
+}
+#column2 .part1 .item  .active i.notification{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -6px;
+    width: 32px;
+    height: 24px;
+    background: url('img/21.png') no-repeat;
 }
 #column2 .part1 .item2 li {
     padding-left: 30px;
@@ -299,7 +314,6 @@ ul li {
 
 #column3 .main-div .main-container {
     flex: 1;
-    /* overflow-y: auto; */
 }
 
 #column3 .main-div .main-side .side-list {
@@ -317,7 +331,10 @@ ul li {
     box-sizing: border-box;
     overflow-y: auto;
 }
-
+#column3 .main-div .main-side .side-list::-webkit-scrollbar {display:none}
+#column3 .main-div .main-side .side-list .hight-light{
+  background: url('img/Colour-highlight.png') no-repeat left;
+}
 #column3 .main-div .main-side .side-list .chat1 {
     padding: 15px 20px;
     box-sizing: border-box;
@@ -413,6 +430,8 @@ ul li {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-head {
@@ -520,26 +539,41 @@ ul li {
 }
 
 .main-container .container-main{
-   display: flex;
+    flex: 1;
+    display: flex;
    flex-direction: column;
 }
-.Tuesday{
-  padding: 25px 30px;
-  box-sizing: border-box;
-  background: url('img/Tuesday-divider.png') repeat-x bottom;
+.oldMessage{
+flex: 1;
+overflow-y: auto;
+padding: 25px 30px;
+box-sizing: border-box;
+
+}
+.oldMessage::-webkit-scrollbar{
+    display: none;
+}
+.oldMessage .Tuesday{
+    padding-top: 15px;
+    box-sizing: border-box;
+    
+}
+.oldMessage .Tuesday-icon{
+    background: url('img/Tuesday-divider.png') repeat-x top;
+}
+.oldMessage .newMes-icon{
+  background: url('img/New-message-divider.png') repeat-x top;
 }
 .Tuesday .message1{
     display: flex;
     flex-direction: row;
       margin-bottom: 10px;
 }
-.Tuesday .message1 img{
+.Tuesday .message1 img.Avatar{
   width: 50px;
   height: 50px;
   display: block;
   margin-right: 20px;
-
-
 }
 .Tuesday .message1 .message-info{
   flex: 1;
@@ -550,7 +584,6 @@ ul li {
 }
 .Tuesday .message1 .message-info .mes-info-1 h4{
   font-size: 16px;
-  font-family: "ProximaNova";
   color: rgb(88, 93, 104);
   line-height: 30px;
   margin-top: 0;
@@ -566,4 +599,47 @@ ul li {
   font-family: "Myriad Pro";
   color: rgb(88, 93, 104);
   line-height: 1.3;
+}
+.message-img-list li{
+    float: left;
+     width: 150px;
+     height: 100px;
+     margin-right: 15px;
+}
+.message-img-list li img{
+    width:100%;
+    height: 100%;
+}
+.writeMessage{
+height: 100px;
+padding: 25px 30px;
+box-sizing: border-box;
+border-top: 1px solid rgb(223, 227, 233);
+}
+.writeMessage .write-box{
+  height: 50px;
+  border:1px solid rgb(223, 227, 233); 
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.write-box span{
+    display: inline-block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: url('img/Add-icon.png') no-repeat center;
+    border-right: 1px solid rgb(223, 227, 233);
+}
+.write-box input{
+    display: inline-block;
+    height: 50px;
+    margin-top: 0;
+    float: left;
+    width: cacl(100% - 51px);
+    width: -webkit-calc(100% - 51px);
+    width: -moz-calc(100% - 51px);
+    padding: 15px 30px;
+    box-sizing: border-box;
+    border: none;
 }
