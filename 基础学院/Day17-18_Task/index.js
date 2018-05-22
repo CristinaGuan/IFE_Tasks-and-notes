@@ -2,7 +2,7 @@
  * @Author: guanxy
  * @Date:   2018-05-20 23:11:38
  * @Last Modified by:   guanxy
- * @Last Modified time: 2018-05-22 17:08:27
+ * @Last Modified time: 2018-05-22 17:47:57
  */
 window.onload = function() {
     //加 
@@ -131,7 +131,9 @@ window.onload = function() {
    for(var i=1;i<=100;i++){
        var g=i/1%10;  //个位
        var s=i/10%10;  //十位
-      if(i==3 || i%3==0 || g==3 || s==3){
+       var t=parseInt(i/10);
+
+      if(i==3 || i%3==0 || g==3 || s==3 || t==3){
         part4Result.push('PA');
       }else{
           part4Result.push(i);
