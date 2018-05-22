@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>第十七天到第十八天，“如果”可以“重来”</title>
+    <style type="text/css" media="screen">
+    .part1,
+    .part2,
+    .part3,
+    .part4,
+    .part5,
+    .part6{
+        border: 1px solid #aaa;
+        margin-bottom: 10px;
+    }
+
+    .part1 h3,
+    .part2 h3,
+    .part3 h3,
+    .part4 h3,
+    .part5 h3,
+    .part6 h3 {
+        color: orange;
+    }
+    #result4{
+        display: block;width: 100%;height: 100px;
+        word-break:break-all;
+    }
+    #result6{
+        display: block;
+        background-color: yellow;
+        width: 100%;
+        height: 50px;line-height: 50px;font-size: 28px;text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="part1">
+        <h3>编码1：关于加减乘除的任务，加上对于特殊情况的判断，比如判断两个输入框是否都是正常输入了数字类型的内容，比如除法的时候除数是否为0，当判断到输入有异常的时候，把错误信息提示到Console中</h3>
+        <div>
+            <input id="first-number" type="text" value="0" placeholder="第一个数字">
+            <input id="second-number" type="text" value="0" placeholder="第二个数字">
+            <button id="add-btn">加</button>
+            <button id="minus-btn">减</button>
+            <button id="times-btn">乘</button>
+            <button id="divide-btn">除</button>
+            <p>运算结果：</p>
+            <p id="result1"></p>
+        </div>
+    </div>
+    <div class="part2">
+        <h3>编码2：阅读通过除2取余的方法来把十进制整数转化为二进制，然后做一个小练习，基于下面代码，完成该转化算法，并实现页面交互</h3>
+        <div>
+            <input id="dec-number2" type="number" placeholder="输入一个十进制非负整数" >
+            <button id="trans-btn2">转化为二进制</button>
+            <p>运算结果：</p>
+            <p id="result2"></p>
+        </div>
+    </div>
+    <div class="part3">
+        <h3>编码3：阅读通过除2取余的方法来把十进制整数转化为二进制，然后做一个小练习，基于下面代码，完成该转化算法，并实现页面交互</h3>
+        <div>
+            <input id="dec-number3" type="number" placeholder="输入一个十进制非负整数">
+            <input id="bin-bit3" type="number" min="0" placeholder="输入转化后二进制数字位数">
+            <button id="trans-btn3">转化为二进制</button>
+             <p>运算结果：</p>
+            <p id="result3"></p>
+        </div>
+    </div>
+     <div class="part4">
+        <h3>编码4：输出从1到100，以此在console输出各数字，但是，当数字为3的倍数或者含有3的时候，输出“PA”,比如：1,2,PA,4,5,PA,……,11,PA,PA,14,PA……</h3>
+        <div>
+             <p>运算结果：</p>
+             <p id="result4"></p>
+        </div>
+    </div>
+    <div class="part5">
+        <h3>编码5：练习使用循环实现一个九九乘法表，第一步，最低要求：在Console中按行输出 n * m = t
+然后，尝试在网页中，使用table来实现一个九九乘法表</h3>
+        <div>
+           <a href="9*9乘法表.html">查看表格99乘法表</a>
+        </div>
+    </div>
+    <div class="part6">
+        <h3>编码6：实现一个当用户访问页面的时候，根据当前时间，在页面中输出不同的问候语，比如早上的时候，输出早上好，晚上的时候是晚上好。</h3>
+        <div>
+           <p id="result6"></p>
+        </div>
+    </div>
+    <script src="./index.js" type="text/javascript"></script>
+</body>
+
+</html>
