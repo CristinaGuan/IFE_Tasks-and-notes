@@ -23,3 +23,8 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八�
 
 *第12~15天：完成一个更复杂的网页
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day12-15_Task/MoreComplexWeb.html
+
+*第17~18天：“如果”可以“重来
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day17-18_Task/index.html
+
+
