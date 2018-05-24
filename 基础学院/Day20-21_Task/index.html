@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>第二十到第二十一天：让你和页面对话</title>
+    <style>
+    .part1,
+    .part2,
+    .part3,
+    .part4,.part5 {
+        width: 100%;
+        border: 1px solid #aaa;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    select {
+        display: none;
+    }
+
+    .palette {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .palette li {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+    .part5 div{
+        width: 480px;
+        height: 480px;
+        border: 1px solid #aaa;
+        background: url('./erik_ce204002.jpg') no-repeat;
+        /* 8160 */
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="part1">
+        <h3>编码1：当点击按钮 submit-btn 时，在console中输出 name 中的内容；在输入过程中，如果按回车键，则同样执行上一条的需求；在输入过程中，如果按 ESC 键，则把输入框中的内容清空</h3>
+        <div>
+            <input id="name1" type="text" onkeydown="EnterPress(event)" />
+            <button id="submit-btn1">Submit</button>
+        </div>
+    </div>
+    <div class="part2">
+        <h3>编码2：控制元素的显示及隐藏</h3>
+        <p>当用户选择了 School 的单选框时，显示 School 的下拉选项，隐藏 Company 的下拉选项 当用户选择了 School 的单选框时，显示 Company 的下拉选项，隐藏 School 的下拉选项</p>
+        <div>
+            <label>
+                <input id="school" name="status" type="radio"> School
+            </label>
+            <label>
+                <input id="company" name="status" type="radio"> Company
+            </label>
+            <select id="school-select">
+                <option>北京邮电大学</option>
+                <option>黑龙江大学</option>
+                <option>华中科技大学</option>
+            </select>
+            <select id="company-select">
+                <option>百度</option>
+                <option>爱奇艺</option>
+            </select>
+        </div>
+    </div>
+    <div class="part3">
+        <h3></h3>
+        <div>
+            <ul class="palette">
+                <li style="background-color:crimson"></li>
+                <li style="background-color:bisque"></li>
+                <li style="background-color:blueviolet"></li>
+                <li style="background-color:coral"></li>
+                <li style="background-color:chartreuse"></li>
+                <li style="background-color:darkolivegreen"></li>
+                <li style="background-color:cyan"></li>
+                <li style="background-color:#194738"></li>
+            </ul>
+            <p class="color-picker"></p>
+        </div>
+    </div>
+    <div class="part4">
+        <h3>分别使用 setTimeout 和 setInterval 实现以下功能</h3>
+        <div>
+            <div id="fade-obj" style="width:300px;height:300px;background:#000;color:#fff;">setInterval</div>
+            <button id="fade-btn">淡出</button>
+        </div>
+     
+    </div>
+    <div class="part5">
+        <h3>CSS Sprite</h3>
+        <div id="Sprite">
+            
+        </div>
+    </div>
+    <script>
+    //Submit按钮事件
+    document.getElementById('submit-btn1').onclick = function() {
+        var name = document.getElementById('name1').value;
+        console.log(name);
+    }
+    //键盘事件
+    function EnterPress(e) { //传入 event 
+        var e = e || window.event;
+        if (e.keyCode == 13) {
+            var name = document.getElementById('name1').value;
+            console.log(name);
+        }
+        if (e.keyCode == 27) {
+            document.getElementById('name1').value = '';
+        }
+    }
+
+    /****************************/
+    //单选按钮事件
+    document.getElementById('school').onchange = function() {
+        var schoolCheckStatus = document.getElementById('school').checked;
+        if (schoolCheckStatus) {
+            // document.getElementById('school-select').style.cssText="display:block;";
+            document.getElementById('school-select').style.display = "block";
+            document.getElementById('company-select').style.cssText = "display:none;";
+
+        }
+    }
+    document.getElementById('company').onchange = function() {
+        var companyCheckStatus = document.getElementById('company').checked;
+        if (companyCheckStatus) {
+            document.getElementById('company-select').style.cssText = "display:block;";
+            document.getElementById('school-select').style.cssText = "display:none;";
+        }
+    }
+    /***************************/
+    var list = document.querySelectorAll("li");
+    for (var i = 0, len = list.length; i < len; i++) {
+        list[i].onclick = function(e) {
+            var t = e.target;
+            var c = t.style.backgroundColor;
+            var p = document.getElementsByClassName("color-picker")[0]
+            p.innerHTML = c;
+            p.style.color = c;
+
+        }
+    }
+    /*****************************/
+    var fadeobj = document.getElementById('fade-obj');
+    var fadebtn = document.getElementById('fade-btn');
+    var fadeOut = true; //默认是淡出
+    var step, num;
+    var style = fadeobj.style;
+    fadebtn.onclick = function() {
+        //按钮不可点击
+        fadebtn.disabled = true;
+        //根据淡出或淡入判断透明度初始值
+        num = fadeOut ? 1 : 0;
+        step = fadeOut ? -0.1 : 0.1;
+        //定时器
+        var c = setInterval(function() {
+            style.opacity = num;
+            num = num + step;
+            if (num > 1 || num < 0) {
+                clearInterval(c);
+                fadebtn.disabled = false;
+                fadebtn.innerHTML = fadeOut ? '淡入' : '淡出';
+                fadeOut = !fadeOut;
+            }
+        }, 100);
+    }
+    
+    var Sprite=document.getElementById('Sprite');
+    var x='0';
+    var y=0;
+    var imgH=8160;
+    var s=setInterval(function(){
+        if(y>=-(imgH-480)){
+           Sprite.style.backgroundPosition=x+' '+y.toString()+'px';
+           // console.log(Sprite.style.backgroundPosition);
+           y=y-480;
+          }else{
+            y=0;
+            // clearInterval(s);
+          }
+       },100);  
+      
+
+    </script>
+</body>
+
+</html>
