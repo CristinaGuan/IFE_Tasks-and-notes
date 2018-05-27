@@ -184,105 +184,17 @@
         <h3>编码4：有一堆Select用于选择日期和时间，在选择后，实时在 id 为 result-wrapper 的 p 标签中显示所选时间和当前时间的差值</h3>
         <div>
             <select id="year-select">
-            	<option value="2017">2017</option>
-            	<option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2050">2050</option>
-            </select>年
+            </select>
             <select id="month-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-            </select>月
+            </select>
             <select id="day-select">
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="8">08</option>
-                <option value="9">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="23">23</option>
-                <option value="25">25</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-            </select>日
+            </select>
             <select id="hour-select">
-                <option value="0">00</option>
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="8">08</option>
-                <option value="9">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-            </select>时
+            </select>
             <select id="minite-select">
-                <option value="0">00</option>
-                <option value="1">01</option>
-                <option value="10">10</option>
-                <option value="14">14</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="40">40</option>
-                <option value="50">50</option>
-                <option value="55">55</option>
-                <option value="59">59</option>
             </select>分
             <select id="second-select">
-                <option value="0">00</option>
-                <option value="1">01</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="38">38</option>
-                <option value="49">49</option>
-                <option value="52">52</option>
-                <option value="56">56</option>
-                <option value="59">59</option>
-            </select>秒
+            </select>
             <p id="result-wrapper"></p>
         </div>
         <script>
@@ -293,14 +205,50 @@
             miniteSelector = document.getElementById('minite-select'),
             secondSelector = document.getElementById('second-select'),
             p4 = document.getElementById('result-wrapper');
-        var year = yearSelector.value,
-            month = monthSelector.value,
-            day = daySelector.value,
+
+        //动态生成option元素
+        function createOptionElement(ele, firstVal, endVal) {
+            for (; firstVal <= endVal; firstVal++) {
+                ele.options.add(new Option(addZero(firstVal), firstVal));
+            }
+        }
+        createOptionElement(yearSelector, 2000, 2050);
+        createOptionElement(monthSelector, 1, 12);
+        var year = yearSelector.value;
+        var month = monthSelector.value;
+        setDay(year,month);
+        createOptionElement(hourSelector, 0, 23);
+        createOptionElement(miniteSelector, 0, 59);
+        createOptionElement(secondSelector, 0, 59);
+
+        //判断闰年
+        function isLeapYear(year) {
+            return (year % 100 != 0 && year % 4 == 0) || (year % 400 == 0);
+        }
+
+        function setDay(y,m) {
+            switch (m) {
+                case "1":
+                case "3":
+                case "5":
+                case "7":
+                case "8":
+                case "10":
+                case "12":  createOptionElement(daySelector, 1, 31);break;
+                case "4":
+                case "6":
+                case "9":
+                case "11":createOptionElement(daySelector, 1, 30);break;
+                case "2": isLeapYear(y)?createOptionElement(daySelector, 1, 28):createOptionElement(daySelector, 1, 29);break;
+            }
+        }
+
+        var day = daySelector.value,
             hour = hourSelector.value,
             minite = miniteSelector.value,
             second = secondSelector.value,
             week = "",
-            tip="",
+            tip = "",
             pOldStr = "",
             pNewStr = "";
 
@@ -317,12 +265,12 @@
             week = checkWeek(weekNum);
             //计算剩余天数
             var dateBetween = newDateTime.getTime() - nowDateTime.getTime();
-            if(dateBetween>0){
-            	dateBetween = newDateTime.getTime() - nowDateTime.getTime();
-            	tip="还有:";
-            }else{
-            	dateBetween = nowDateTime.getTime()-newDateTime.getTime();
-            	tip="过去了:";
+            if (dateBetween >= 0) {
+                dateBetween = newDateTime.getTime() - nowDateTime.getTime();
+                tip = "还有:";
+            } else {
+                dateBetween = nowDateTime.getTime() - newDateTime.getTime();
+                tip = "过去了:";
             }
             var betweenDays = Math.floor(dateBetween / (24 * 3600 * 1000));
             //计算天数后剩余的毫秒数 
@@ -336,16 +284,20 @@
 
             var betweenSecond = Math.round(afterMinite / 1000);
 
-            pOldStr = "现在距离 " + year + "年" + addZero(month) + "月" + addZero(day) + "日" + week + " " + addZero(hour) + ":" + addZero(minite) + ":" + addZero(second)+"  " + tip;
+            pOldStr = "现在距离 " + year + "年" + addZero(month) + "月" + addZero(day) + "日" + week + " " + addZero(hour) + ":" + addZero(minite) + ":" + addZero(second) + "  " + tip;
             pNewStr = betweenDays + " 天" + betweenHours + " 小时" + betweenMinite + " 分钟" + betweenSecond + " 秒";
             p4.innerHTML = pOldStr + pNewStr;
         }
         yearSelector.onchange = function() {
             year = yearSelector.value;
+            month = monthSelector.value;
+            setDay(year,month);
             countDifferDate();
         }
         monthSelector.onchange = function() {
             month = monthSelector.value;
+            year=yearSelector.value;
+            setDay(year,month);
             countDifferDate();
         }
         daySelector.onchange = function() {
@@ -366,7 +318,6 @@
             // console.log(second);
             countDifferDate();
         }
-       
         </script>
     </div>
 </body>
