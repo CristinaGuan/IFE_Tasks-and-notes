@@ -817,7 +817,38 @@
         arrToObj(menuArr);
 
         function arrToObj(arr) {
-
+          var arrBox=[],obj={};
+          arr.forEach(item=>{
+            var temp={
+                id:item[0],
+                name:item[1],
+                parentMenu:item[2]
+            }
+            arrBox.push(temp);
+          });
+          console.log(arrBox);
+          arrBox.forEach((item)=>{
+             if(item.parentMenu==-1){
+                 obj[item.id]={
+                    name:item.name,
+                    subMenu:{}
+                 }
+             }else if(obj[item.parentMenu]){
+                obj[item.parentMenu].subMenu[item.id] = {
+                        name: item.name
+                    }
+             }else{
+                //找到祖父id
+                 var p=arrBox[item.parentMenu-1].parentMenu;
+                 // console.log(p);
+                 obj[p].subMenu[item.parentMenu].subMenu={
+                      [item.id]:{
+                        name:item.name
+                      }
+                 }
+             }
+          });
+           console.log(obj);
         }
         </script>
     </div>

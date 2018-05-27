@@ -33,4 +33,7 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八�
 *第22~24天：JavaScript里面的居民们 <br>
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day22-24_Task/index.html
 
+*第25~27天：Date()相关 <br>
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day25-27_Task/index.html
+
 

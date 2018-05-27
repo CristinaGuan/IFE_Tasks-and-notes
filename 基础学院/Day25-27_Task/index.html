@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>第二十五天到第二十七天 倒数开始 滴答滴 滴答滴</title>
+    <style>
+    .part1,
+    .part2,
+    .part3,
+    .part4 {
+        width: 100%;
+        border: 1px solid green;
+        padding: 10px 10px;
+        box-sizing: border-box;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="part1">
+        <h3>编码1：写一个GoSteps函数，然后跑通下面的测试用例,结果看console</h3>
+    </div>
+    <script>
+    function Go() {
+        console.log("Go");
+    }
+
+    function GoSteps(n) {
+        console.log(n);
+        if (parseInt(n) == 1 || n === undefined) {
+            n = 1;
+            Go();
+        } else if (n == 0 || n < 0 || n == false || n == 'Test' || n == NaN || n === null) {
+            n = 0;
+        } else {
+            for (var i = 0; i < n; i++) {
+                Go();
+            }
+        }
+    }
+
+    GoSteps(10); // Go 10次
+    GoSteps(1); // Go 1次
+    GoSteps(); // Go 1次，认为缺少参数时，默认参数为1
+    GoSteps(0); // 0次
+    GoSteps(-1); // 0次
+    GoSteps(1.4); // Go 1次
+    GoSteps(1.6); // Go 1次
+    GoSteps(-1); // 0次
+    GoSteps(true); // Go 1次
+    GoSteps(false); // 0次
+    GoSteps("Test"); // 0次
+    GoSteps(NaN); // 0次
+    GoSteps(null); // 0次
+    </script>
+    <div class="part2">
+        <h3>编码2：做一个最简单的时钟</h3>
+        <p id="showNowTime"></p>
+        <script>
+        var p1 = document.getElementById('showNowTime');
+        nowTime();
+
+        function nowTime() {
+            var now = "";
+            var dateJson = getNowDate();
+            // 格式为 YYYY 年 MM 月 DD 日 星期 D HH:mm:ss
+            now = dateJson.Y + " 年 " + addZero((dateJson.M + 1)) + " 月 " + dateJson.D + " 日 " + addZero(checkWeek(dateJson.day)) + " " + addZero((dateJson.h)) + ":" + addZero(dateJson.m) + ":" + addZero(dateJson.s);
+            p1.innerHTML = now;
+            var t = setTimeout('nowTime()', 1000);
+
+        }
+        //获取当前时间并返回
+        function getNowDate() {
+            var date = new Date();
+            var Y = date.getFullYear(),
+                M = date.getMonth(),
+                D = date.getDate(),
+                day = date.getDay(),
+                h = date.getHours(),
+                m = date.getMinutes(),
+                s = date.getSeconds();
+            var nowDate = {
+                "Y": Y,
+                "M": M,
+                "D": D,
+                "day": day,
+                "h": h,
+                "m": m,
+                "s": s
+            }
+            return nowDate;
+        }
+        //判断星期
+        function checkWeek(day) {
+            switch (day) {
+                case 0:
+                    day = "星期日";
+                    break;
+                case 1:
+                    day = "星期一";
+                    break;
+                case 2:
+                    day = "星期二";
+                    break;
+                case 3:
+                    day = "星期三";
+                    break;
+                case 4:
+                    day = "星期四";
+                    break;
+                case 5:
+                    day = "星期五";
+                    break;
+                case 6:
+                    day = "星期六";
+                    break;
+            }
+            return day;
+        }
+        // 自动补全0
+        function addZero(z) {
+            if (z < 10) {
+                z = "0" + z;
+            }
+            return z;
+        }
+        </script>
+    </div>
+    <div class="part3">
+        <h3>编码3：输出格式变为：2008-10-10 Monday 07:10:30 PM</h3>
+        <p id="p3"></p>
+        <script>
+        var p3 = document.getElementById('p3');
+        showNowDate2();
+
+        function showNowDate2() {
+            var dateJson = getNowDate();
+            var now = dateJson.Y + "-" + addZero(dateJson.M + 1) + "-" + addZero(dateJson.D) + " " + checkWeekToEnglish(dateJson.day) + " " + addZero(dateJson.h) + ":" + addZero(dateJson.m) + ":" + addZero(dateJson.s) + " " + checkAMPM(dateJson.h);
+            p3.innerHTML = now;
+            var t = setInterval('showNowDate2()', 1000);
+
+        }
+        //星期--英语
+        function checkWeekToEnglish(day) {
+            switch (day) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Firday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+            }
+            return day;
+        }
+
+        function checkAMPM(h) {
+            var w = "";
+            if (h > 12) {
+                w = "PM";
+            } else {
+                w = "AM"
+            }
+            return w;
+        }
+        </script>
+    </div>
+    <div class="part4">
+        <h3>编码4：有一堆Select用于选择日期和时间，在选择后，实时在 id 为 result-wrapper 的 p 标签中显示所选时间和当前时间的差值</h3>
+        <div>
+            <select id="year-select">
+            	<option value="2017">2017</option>
+            	<option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2050">2050</option>
+            </select>年
+            <select id="month-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>月
+            <select id="day-select">
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="23">23</option>
+                <option value="25">25</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>日
+            <select id="hour-select">
+                <option value="0">00</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+            </select>时
+            <select id="minite-select">
+                <option value="0">00</option>
+                <option value="1">01</option>
+                <option value="10">10</option>
+                <option value="14">14</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="59">59</option>
+            </select>分
+            <select id="second-select">
+                <option value="0">00</option>
+                <option value="1">01</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="38">38</option>
+                <option value="49">49</option>
+                <option value="52">52</option>
+                <option value="56">56</option>
+                <option value="59">59</option>
+            </select>秒
+            <p id="result-wrapper"></p>
+        </div>
+        <script>
+        var yearSelector = document.getElementById('year-select'),
+            monthSelector = document.getElementById('month-select'),
+            daySelector = document.getElementById('day-select'),
+            hourSelector = document.getElementById('hour-select'),
+            miniteSelector = document.getElementById('minite-select'),
+            secondSelector = document.getElementById('second-select'),
+            p4 = document.getElementById('result-wrapper');
+        var year = yearSelector.value,
+            month = monthSelector.value,
+            day = daySelector.value,
+            hour = hourSelector.value,
+            minite = miniteSelector.value,
+            second = secondSelector.value,
+            week = "",
+            tip="",
+            pOldStr = "",
+            pNewStr = "";
+
+        countDifferDate();
+
+        function countDifferDate() {
+
+
+            var nowDateTime = new Date(),
+                newDateTimeString = year + "/" + month + "/" + day + " " + hour + ":" + minite + ":" + second,
+                newDateTime = new Date(newDateTimeString);
+            // console.log(newDateTimeString );
+            var weekNum = newDateTime.getDay();
+            week = checkWeek(weekNum);
+            //计算剩余天数
+            var dateBetween = newDateTime.getTime() - nowDateTime.getTime();
+            if(dateBetween>0){
+            	dateBetween = newDateTime.getTime() - nowDateTime.getTime();
+            	tip="还有:";
+            }else{
+            	dateBetween = nowDateTime.getTime()-newDateTime.getTime();
+            	tip="过去了:";
+            }
+            var betweenDays = Math.floor(dateBetween / (24 * 3600 * 1000));
+            //计算天数后剩余的毫秒数 
+            var afterDay = dateBetween % (24 * 3600 * 1000);
+            //计算剩余小时数
+            var betweenHours = Math.floor(afterDay / (3600 * 1000));
+            var afterHour = afterDay % (3600 * 1000);
+            //计算剩余分钟
+            var betweenMinite = Math.floor(afterHour / (60 * 1000));
+            var afterMinite = afterHour % (60 * 1000);
+
+            var betweenSecond = Math.round(afterMinite / 1000);
+
+            pOldStr = "现在距离 " + year + "年" + addZero(month) + "月" + addZero(day) + "日" + week + " " + addZero(hour) + ":" + addZero(minite) + ":" + addZero(second)+"  " + tip;
+            pNewStr = betweenDays + " 天" + betweenHours + " 小时" + betweenMinite + " 分钟" + betweenSecond + " 秒";
+            p4.innerHTML = pOldStr + pNewStr;
+        }
+        yearSelector.onchange = function() {
+            year = yearSelector.value;
+            countDifferDate();
+        }
+        monthSelector.onchange = function() {
+            month = monthSelector.value;
+            countDifferDate();
+        }
+        daySelector.onchange = function() {
+            day = daySelector.value;
+            countDifferDate();
+        }
+        hourSelector.onchange = function() {
+            hour = hourSelector.value;
+            countDifferDate();
+        }
+        miniteSelector.onchange = function() {
+            minite = miniteSelector.value;
+            countDifferDate();
+        }
+        secondSelector.onchange = function() {
+
+            second = secondSelector.value;
+            // console.log(second);
+            countDifferDate();
+        }
+       
+        </script>
+    </div>
+</body>
+
+</html>
