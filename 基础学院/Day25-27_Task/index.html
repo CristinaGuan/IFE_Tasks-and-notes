@@ -216,7 +216,7 @@
         createOptionElement(monthSelector, 1, 12);
         var year = yearSelector.value;
         var month = monthSelector.value;
-        setDay(year,month);
+        setDay(year, month);
         createOptionElement(hourSelector, 0, 23);
         createOptionElement(miniteSelector, 0, 59);
         createOptionElement(secondSelector, 0, 59);
@@ -225,8 +225,8 @@
         function isLeapYear(year) {
             return (year % 100 != 0 && year % 4 == 0) || (year % 400 == 0);
         }
-
-        function setDay(y,m) {
+       //动态添加日
+        function setDay(y, m) {
             switch (m) {
                 case "1":
                 case "3":
@@ -234,12 +234,21 @@
                 case "7":
                 case "8":
                 case "10":
-                case "12":  createOptionElement(daySelector, 1, 31);break;
+                case "12":
+                    daySelector.innerHTML = "";
+                    createOptionElement(daySelector, 1, 31);
+                    break;
                 case "4":
                 case "6":
                 case "9":
-                case "11":createOptionElement(daySelector, 1, 30);break;
-                case "2": isLeapYear(y)?createOptionElement(daySelector, 1, 28):createOptionElement(daySelector, 1, 29);break;
+                case "11":
+                    daySelector.innerHTML = "";
+                    createOptionElement(daySelector, 1, 30);
+                    break;
+                case "2":
+                    daySelector.innerHTML = "";
+                    isLeapYear(y) ? createOptionElement(daySelector, 1, 28) : createOptionElement(daySelector, 1, 29);
+                    break;
             }
         }
 
@@ -291,13 +300,13 @@
         yearSelector.onchange = function() {
             year = yearSelector.value;
             month = monthSelector.value;
-            setDay(year,month);
+            setDay(year, month);
             countDifferDate();
         }
         monthSelector.onchange = function() {
             month = monthSelector.value;
-            year=yearSelector.value;
-            setDay(year,month);
+            year = yearSelector.value;
+            setDay(year, month);
             countDifferDate();
         }
         daySelector.onchange = function() {
