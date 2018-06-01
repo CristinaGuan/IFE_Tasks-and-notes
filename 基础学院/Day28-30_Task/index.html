@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>第二十八天到第三十天 给爱的人发个邮件吧</title>
+    <style>
+    .part1 {
+        border: 1px solid green;
+        padding: 10px 10px;
+        box-sizing: border-box;
+    }
+    #email-input{
+    	width: 200px;
+    	height: 30px;
+    	border: 1px solid #ddd;
+    }
+    #email-sug-wrapper{
+    	width: 164px;
+       display: block;
+       border: 1px solid #ddd;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="part1">
+        <h3>通过一个小练习综合运用 HTML、CSS、JavaScript，我们要实现一个邮箱输入的提示功能</h3>
+        <div class="wrapper">
+            <input id="email-input" type="text">
+            <ul id="email-sug-wrapper" class="email-sug"></ul>
+        </div>
+        <script>
+        // 邮箱后缀List参考
+        var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+        var inputEle=document.getElementById('email-input');
+        inputEle.onfocus=function(){
+        	console.log("sss");
+        }
+        </script>
+    </div>
+</body>
+
+</html>

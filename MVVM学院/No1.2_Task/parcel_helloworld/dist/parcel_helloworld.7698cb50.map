@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["document","write"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,SAASC,KAAT,CAAe,cAAf","file":"parcel_helloworld.7698cb50.map","sourceRoot":"..","sourcesContent":["document.write(\"hello parcel\");"]}
