@@ -5,20 +5,38 @@
     <meta charset="UTF-8">
     <title>第二十八天到第三十天 给爱的人发个邮件吧</title>
     <style>
+    li {
+        list-style-type: none;
+    }
+ input{outline:none;}
     .part1 {
         border: 1px solid green;
         padding: 10px 10px;
         box-sizing: border-box;
     }
-    #email-input{
-    	width: 200px;
-    	height: 30px;
-    	border: 1px solid #ddd;
+    .wrapper{
+        width: 200px;
+        border: 2px solid #aaa;
     }
-    #email-sug-wrapper{
-    	width: 164px;
-       display: block;
-       border: 1px solid #ddd;
+    #email-input {
+        width: 100%;
+        height: 30px;
+        border:none;
+        box-sizing: border-box;
+    }
+
+    #email-sug-wrapper {
+        display: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #email-sug-wrapper li{
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #aaa;
+        overflow-x: hidden;
     }
     </style>
 </head>
@@ -33,9 +51,27 @@
         <script>
         // 邮箱后缀List参考
         var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
-        var inputEle=document.getElementById('email-input');
-        inputEle.onfocus=function(){
-        	console.log("sss");
+        var inputEle = document.getElementById('email-input');
+        var ulEle = document.getElementById('email-sug-wrapper');
+        inputEle.oninput = function() {
+            if (inputEle.value.length!== 0) {
+               ulEle.innerHTML="";
+                for (var i = 0; i < postfixList.length; i++) {
+                    var text = inputEle.value + "@" + postfixList[i];
+                    addLi(ulEle, text);
+                }
+                ulEle.style.display = 'block';
+            }else{
+                ulEle.style.display = 'none';
+            }
+
+
+        }
+
+        function addLi(ul, text) {
+            var li = document.createElement('li');
+            li.innerHTML = text;
+            ul.appendChild(li);
         }
         </script>
     </div>
