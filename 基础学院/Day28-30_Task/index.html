@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -57,9 +57,9 @@
         </div>
         <script>
         /*当用户没有任何输入时， 提示框消失
-                                                当用户输入字符后， 显示提示框， 并且把用户输入的内容自动拼上邮箱后缀进行显示
-                                                暂时不用考虑示意图中的红色和蓝色背景色的逻辑
-                                                注意用户输入中前后空格需要去除*/
+                                                        当用户输入字符后， 显示提示框， 并且把用户输入的内容自动拼上邮箱后缀进行显示
+                                                        暂时不用考虑示意图中的红色和蓝色背景色的逻辑
+                                                        注意用户输入中前后空格需要去除*/
         // 邮箱后缀List参考
         var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
         var inputEle = document.getElementById('email-input');
@@ -175,6 +175,9 @@
             li.innerHTML = text;
             ul.appendChild(li);
         }
+
+        //增加鼠标悬停事件
+        //  待完善。。。。。。。。。
         </script>
     </div>
 </body>
