@@ -34,6 +34,8 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八�
 ### 第25~27天：Date()相关 <br>
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day25-27_Task/index.html
 
+### 第28~30:给爱的人发个邮件吧
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day28-30_Task/index.html
 
 # MVVM学院任务<br>
 ### No1.2:用webpack4 / parcel快速搭建开发san helloworld  <br>
@@ -41,4 +43,5 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八�
 https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1.2_Task/webpack_helloworld/dist/index.html<br>
 ### No2.1:数据操作
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2.1_Task/index.html
+### No.2.2 
 
