@@ -36,6 +36,7 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八�
 
 ### 第28~30:给爱的人发个邮件吧
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day28-30_Task/index.html
+或者：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E5%9F%BA%E7%A1%80%E5%AD%A6%E9%99%A2/Day28-30_Task/index.html
 
 # MVVM学院任务<br>
 ### No1.2:用webpack4 / parcel快速搭建开发san helloworld  <br>
