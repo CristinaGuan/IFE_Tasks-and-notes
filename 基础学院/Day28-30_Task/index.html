@@ -66,9 +66,9 @@
         </div>
         <script>
         /*当用户没有任何输入时， 提示框消失
-                                          当用户输入字符后， 显示提示框， 并且把用户输入的内容自动拼上邮箱后缀进行显示
-                                          暂时不用考虑示意图中的红色和蓝色背景色的逻辑
-                                          注意用户输入中前后空格需要去除*/
+                                                  当用户输入字符后， 显示提示框， 并且把用户输入的内容自动拼上邮箱后缀进行显示
+                                                  暂时不用考虑示意图中的红色和蓝色背景色的逻辑
+                                                  注意用户输入中前后空格需要去除*/
         // 邮箱后缀List参考
         var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
         var inputEle = document.getElementById('email-input');
@@ -77,9 +77,9 @@
         var nowSelectTipIndex = 0;
         // 将第nowSelectTipIndex个Li的样式设置为被选样式
         function setActiveLi() {
-            let lis =ulEle.children;
-            for (let i=0;i<lis.length;i++){
-            lis[i].classList.remove("active");
+            let lis = ulEle.children;
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].classList.remove("active");
             }
             ulEle.childNodes[nowSelectTipIndex].setAttribute('class', 'active');
 
@@ -113,21 +113,21 @@
                     }
                     setActiveLi()
                 }
-             showUl();
-                
+                showUl();
+
             } else {
-                 hideUl();
+                hideUl();
             }
 
 
         }
         //显示ul
-        function showUl(){
+        function showUl() {
             ulEle.style.display = 'block';
         }
         //隐藏ul
-         function hideUl(){
-           ulEle.style.display = 'none';
+        function hideUl() {
+            ulEle.style.display = 'none';
         }
         //清除前后空格
         function trim(s) {
@@ -205,16 +205,15 @@
         }
 
         //增加鼠标悬停事件
-        //  待完善。。。。。。。。。
         ulEle.onclick = function(e) {
             inputEle.value = e.target.innerHTML;
             nowSelectTipIndex = e.target.index;
-            console.log(e.target);
             ulEle.style.display = "none";
         }
 
         inputEle.onfocus = function() {
             inputEle.value = trim("");
+            hideUl();
         }
 
         function resetNowSelectTipIndex() {
@@ -222,6 +221,7 @@
         }
 
         inputEle.addEventListener("keydown", keyHandler);
+
         function keyHandler(e) {
             var liLen = ulEle.childNodes.length;
             if (e.keyCode === 38) { // 向上方向键
@@ -242,9 +242,9 @@
             }
             if (e.keyCode === 13 && ulEle.style.display === 'block') {
                 inputEle.value = trim(ulEle.children[nowSelectTipIndex].innerText);
-                 hideUl();
+                hideUl();
             }
-            if (e.keyCode === 27) {//esc键全选
+            if (e.keyCode === 27) { //esc键全选
                 inputEle.select();
             }
         }
