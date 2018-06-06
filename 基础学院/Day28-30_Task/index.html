@@ -7,6 +7,7 @@
     <style>
     li {
         list-style-type: none;
+        cursor: pointer;
     }
 
     input {
@@ -45,6 +46,14 @@
         border-top: 1px solid #aaa;
         overflow-x: hidden;
     }
+
+    #email-sug-wrapper li:hover {
+        background: yellow;
+    }
+
+    .active {
+        background: green;
+    }
     </style>
 </head>
 
@@ -57,46 +66,68 @@
         </div>
         <script>
         /*当用户没有任何输入时， 提示框消失
-                                                        当用户输入字符后， 显示提示框， 并且把用户输入的内容自动拼上邮箱后缀进行显示
-                                                        暂时不用考虑示意图中的红色和蓝色背景色的逻辑
-                                                        注意用户输入中前后空格需要去除*/
+                                          当用户输入字符后， 显示提示框， 并且把用户输入的内容自动拼上邮箱后缀进行显示
+                                          暂时不用考虑示意图中的红色和蓝色背景色的逻辑
+                                          注意用户输入中前后空格需要去除*/
         // 邮箱后缀List参考
         var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
         var inputEle = document.getElementById('email-input');
         var ulEle = document.getElementById('email-sug-wrapper');
-        inputEle.oninput = function() {
+        // 增加一个变量，用于存储当前选中的提示Li的序号
+        var nowSelectTipIndex = 0;
+        // 将第nowSelectTipIndex个Li的样式设置为被选样式
+        function setActiveLi() {
+            let lis =ulEle.children;
+            for (let i=0;i<lis.length;i++){
+            lis[i].classList.remove("active");
+            }
+            ulEle.childNodes[nowSelectTipIndex].setAttribute('class', 'active');
+
+        }
+        inputEle.oninput = function(e) {
+            if (e.keyCode !== 13 && e.keyCode !== 38 && e.keyCode !== 40) {
+                resetNowSelectTipIndex();
+            }
             //去掉前后空格
             inputEle.value = trim(inputEle.value);
             if (inputEle.value.length !== 0) {
                 //获取@前面的字符作为拼接内容
-
                 var pingStr = inputEle.value;
                 //返回匹配邮箱后缀的数组
                 var inputValObj = {};
                 inputValObj = getPingStr(pingStr);
                 var textArray = inputValObj.textArr;
-
-
                 //判断@后面的字符是否与邮箱后缀匹配，数组长度为0代表没有找到匹配，那就需要显示全部联想
                 if (textArray.length != 0) {
                     ulEle.innerHTML = "";
                     for (var i = 0; i < textArray.length; i++) {
                         addLi(ulEle, textArray[i]);
                     }
+                    setActiveLi()
+
                 } else {
                     ulEle.innerHTML = "";
                     for (var i = 0; i < postfixList.length; i++) {
                         var tetx = inputValObj.leftStr + "@" + postfixList[i];
                         addLi(ulEle, tetx);
                     }
+                    setActiveLi()
                 }
-
-                ulEle.style.display = 'block';
+             showUl();
+                
             } else {
-                ulEle.style.display = 'none';
+                 hideUl();
             }
 
 
+        }
+        //显示ul
+        function showUl(){
+            ulEle.style.display = 'block';
+        }
+        //隐藏ul
+         function hideUl(){
+           ulEle.style.display = 'none';
         }
         //清除前后空格
         function trim(s) {
@@ -134,9 +165,8 @@
             }
             return str;
         }
-        //获取@前面的字符
+        //获取@前面的字符,生成li的提示内容
         function getPingStr(s) {
-
             var a = "@",
                 textArr = [],
                 leftStr = s,
@@ -146,12 +176,10 @@
                 rightStr = s.split("@")[1];
 
             }
-
             var rightStrList = rightStr.split("");
             if (rightStrList.length != 0) {
                 textArr = [];
                 for (var i = 0; i < postfixList.length; i++) {
-
                     for (var j = 0; j < rightStrList.length; j++) {
                         if (postfixList[i].indexOf(rightStrList[j]) !== -1) {
                             //找到匹配的
@@ -178,6 +206,48 @@
 
         //增加鼠标悬停事件
         //  待完善。。。。。。。。。
+        ulEle.onclick = function(e) {
+            inputEle.value = e.target.innerHTML;
+            nowSelectTipIndex = e.target.index;
+            console.log(e.target);
+            ulEle.style.display = "none";
+        }
+
+        inputEle.onfocus = function() {
+            inputEle.value = trim("");
+        }
+
+        function resetNowSelectTipIndex() {
+            nowSelectTipIndex = 0;
+        }
+
+        inputEle.addEventListener("keydown", keyHandler);
+        function keyHandler(e) {
+            var liLen = ulEle.childNodes.length;
+            if (e.keyCode === 38) { // 向上方向键
+                if (nowSelectTipIndex === 0) {
+                    nowSelectTipIndex = liLen - 1;
+                } else {
+                    nowSelectTipIndex -= 1;
+                }
+                setActiveLi();
+            }
+            if (e.keyCode === 40) { // 向下方向键
+                if (nowSelectTipIndex === liLen - 1) {
+                    nowSelectTipIndex = 0;
+                } else {
+                    nowSelectTipIndex += 1;
+                }
+                setActiveLi();
+            }
+            if (e.keyCode === 13 && ulEle.style.display === 'block') {
+                inputEle.value = trim(ulEle.children[nowSelectTipIndex].innerText);
+                 hideUl();
+            }
+            if (e.keyCode === 27) {//esc键全选
+                inputEle.select();
+            }
+        }
         </script>
     </div>
 </body>
