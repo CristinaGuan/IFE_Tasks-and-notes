@@ -1,0 +1,21 @@
+/*
+* @Author: guanxy
+* @Date:   2018-06-06 23:29:50
+* @Last Modified by:   guanxy
+* @Last Modified time: 2018-06-07 00:12:28
+*/
+#table-wrapper{
+	margin-top: 30px;
+}
+table, td, th
+{
+border:1px solid #aaa;
+border-collapse:collapse;
+}
+th
+{
+background-color:green;
+color:white;
+font-size: 20px;
+font-weight: bold;
+}

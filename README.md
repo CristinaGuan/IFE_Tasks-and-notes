@@ -38,6 +38,11 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/第七和第八�
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day28-30_Task/index.html
 或者：http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-notes/blob/master/%E5%9F%BA%E7%A1%80%E5%AD%A6%E9%99%A2/Day28-30_Task/index.html
 
+### 第31~33天：我是精明的小卖家（一）
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day31-33_Task/index1.html <br>
+https://cristinaguan.github.io/IFE_Tasks-and-notes/基础学院/Day31-33_Task/checkbox.html
+
+
 # MVVM学院任务<br>
 ### No1.2:用webpack4 / parcel快速搭建开发san helloworld  <br>
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1.2_Task/parcel_helloworld/index.html<br>
