@@ -2,7 +2,7 @@
  * @Author: guanxy
  * @Date:   2018-06-06 12:06:56
  * @Last Modified by:   guanxy
- * @Last Modified time: 2018-06-15 00:12:01
+ * @Last Modified time: 2018-06-15 00:18:16
  */
 window.onload = function() {
     var region_select_div = document.getElementById('region-select');
@@ -77,8 +77,6 @@ window.onload = function() {
     }
 
     function setTableData() {
-        console.log(rCArr);
-        console.log(pCArr);
         var data = [],
             databox = [];
         if (rCArr.length != 0) {
@@ -91,8 +89,7 @@ window.onload = function() {
                         }
                     }
                 }
-                console.log("databox");
-                console.log(databox);
+        
                 for (var p = 0; p < pCArr.length; p++) {
                     for (var s = 0; s < databox.length; s++) {
                         if (pCArr[p] == databox[s].product) {
@@ -101,8 +98,7 @@ window.onload = function() {
                         }
                     }
                 }
-                console.log("结果数据");
-                console.log(data);
+              
             }
 
         }
