@@ -167,14 +167,12 @@
         }
         //获取@前面的字符,生成li的提示内容
         function getPingStr(s) {
-            var a = "@",
-                textArr = [],
+            var textArr = [],
                 leftStr = s,
                 rightStr = "";
-            if (s.indexOf(a) != -1 && s.indexOf(a) != 0) {
-                leftStr = s.split("@")[0];
-                rightStr = s.split("@")[1];
-
+            if (s.indexOf('@') != -1) {
+                leftStr = s.substring(0,s.indexOf('@'));
+                rightStr = s.substring(s.indexOf('@')+1,s.length);
             }
             var rightStrList = rightStr.split("");
             if (rightStrList.length != 0) {
