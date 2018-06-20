@@ -53,5 +53,5 @@ https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1.2_Task/webpack
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2.1_Task/index.html
 
 ### No.2.2 :条件和循环
-预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2.2_Task/index.html
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2_2_Task/index.html
 
