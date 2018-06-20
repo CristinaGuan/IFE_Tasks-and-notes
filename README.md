@@ -47,10 +47,10 @@ http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-note
 
 # MVVM学院任务<br>
 ### No1.2:用webpack4 / parcel快速搭建开发san helloworld  <br>
-预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1.2_Task/parcel_helloworld/index.html<br>
-https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1.2_Task/webpack_helloworld/dist/index.html<br>
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1_2_Task/parcel_helloworld/index.html<br>
+https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1_2_Task/webpack_helloworld/dist/index.html<br>
 ### No2.1:数据操作
-预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2.1_Task/index.html
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2_1_Task/index.html
 
 ### No.2.2 :条件和循环
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2_2_Task/index.html
