@@ -2,7 +2,7 @@
  * @Author: guanxy
  * @Date:   2018-06-06 12:06:56
  * @Last Modified by:   guanxy
- * @Last Modified time: 2018-06-15 00:18:16
+ * @Last Modified time: 2018-06-15 11:59:46
  */
 window.onload = function() {
     var region_select_div = document.getElementById('region-select');
@@ -49,9 +49,7 @@ window.onload = function() {
                     }
                     if (c == input.length - 1) {
                         input[0].checked = "checked";
-
-
-                    } else {
+                    } else{
                         input[0].checked = false;
                     }
                     input == regionInput ? rCArr = getCheckVal(input, box) : pCArr = getCheckVal(input, box);
