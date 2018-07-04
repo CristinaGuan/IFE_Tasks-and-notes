@@ -1,0 +1,29 @@
+{
+  "name": "mvvm",
+  "version": "1.0.0",
+  "description": "MVVM学院任务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --module-bind 'css=style-loader!css-loader'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CristinaGuan/IFE_Tasks-and-notes.git"
+  },
+  "author": "官官",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristinaGuan/IFE_Tasks-and-notes/issues"
+  },
+  "homepage": "https://github.com/CristinaGuan/IFE_Tasks-and-notes#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.13.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "san": "^3.6.1"
+  }
+}

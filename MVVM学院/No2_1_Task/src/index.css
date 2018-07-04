@@ -1,0 +1,38 @@
+/*
+* @Author: guanxy
+* @Date:   2018-06-21 16:46:11
+* @Last Modified by:   guanxy
+* @Last Modified time: 2018-06-21 16:46:36
+*/
+ #inputBox {
+        padding: 30px;
+    }
+
+    #inputBox input {
+        width: 200px;
+        height: 40px;
+        border: 1px solid #aaa;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    #show li {
+        list-style-type: none;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    #show li span {
+        display: inline-block;
+        float: left;
+    }
+
+    #show li p {
+        display: inline-block;
+        width: 200px;
+        border-bottom: 1px solid #aaa;
+        height: 30px;
+        line-height: 30px;
+        margin: 0;
+    }
