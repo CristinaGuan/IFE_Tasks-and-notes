@@ -50,8 +50,11 @@ http://htmlpreview.github.io/?https://github.com/CristinaGuan/IFE_Tasks-and-note
 预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1_2_Task/parcel_helloworld/index.html<br>
 https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No1_2_Task/webpack_helloworld/dist/index.html<br>
 ### No2.1:数据操作
-预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2_1_Task/index.html
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/Vue/MVVM/dist/index.html#/page2_1
 
 ### No.2.2 :条件和循环
-预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/MVVM学院/No2_2_Task/index.html
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/Vue/MVVM/dist/index.html#/page2_2
+
+## No.2.4 事件处理
+预览地址：https://cristinaguan.github.io/IFE_Tasks-and-notes/Vue/MVVM/dist/index.html#/page2_4
 
